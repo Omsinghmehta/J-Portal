@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
         <div className="text-2xl font-bold">
           <h1>
-            Talent<span className="text-[#1900ff]">Bridge</span>
+            <Link to='/'>Talent<span className="text-[#1900ff]">Bridge</span></Link>
           </h1>
         </div>
         <div className=" flex items-center gap-12">
