@@ -29,20 +29,19 @@ const CategoryCrousal = () => {
   };
   return (
     <div>
-      <Carousel className="max-w-120 mx-auto my-18">
-        <CarouselContent>
+      <Carousel className="max-w-30 md:max-w-110 mx-auto my-5 md:my-18 ">
+        <CarouselContent >
           {category.map((cat, idx) => (
             <CarouselItem
               key={idx}
-             
-              className="md:basis-1/2 lg:basis-1/3"
+              className="basis-1/2 lg:basis-1/3"
             >
-              <Button onClick={() => changeHandler(cat)} className="rounded   ">{cat}</Button>
+              <Button onClick={() => changeHandler(cat)} className="rounded  max-md:text-[7px] ">{cat}</Button>
             </CarouselItem>
           ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        </CarouselContent >
+        <CarouselPrevious className='max-sm:w-6 h-auto'/>
+        <CarouselNext className='max-sm:w-6 h-auto'/>
       </Carousel>
     </div>
   );

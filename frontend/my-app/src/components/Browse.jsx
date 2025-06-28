@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 export default function Browse() {
   useGetAllJobs();
   const { allJobs } = useSelector((store) => store.job);
-  // const {bookmarks}=useSelector(store=>store.bookmarks);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setSearchQuery(""));

@@ -9,9 +9,9 @@ export default function LatestJob() {
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .slice(0, 6);
   return (
-    <div className='px-4 md:gap-x-12 mw-7xl mx-auto'>
-        <h1 className='text-4xl font-bold text-[#1717a2] ml-30'>Latest & Top <span className='text-black'>Job Openings</span></h1>
-        <div className='grid  grid-cols-1  md:grid-cols-3 gap-y-9 gap-x-1 ml-30 my-10'>
+    <div className='md:gap-x-12  px-5 lg:px-32  '>
+        <h1 className='text-xl md:text-4xl font-bold text-[#1717a2]  '>Latest & Top <span className='text-black'>Job Openings</span></h1>
+        <div className='grid  grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-y-5 md:gap-y-9 gap-x-5  my-5 md:my-10'>
 
           {
            ( latestJobs.length<=0)?<span>Jobs Not Found</span>

@@ -45,7 +45,7 @@ export default function JobCard({ job }) {
 
       <div className="flex mt-3">
         <Avatar className="mr-3">
-          <AvatarImage src={job?.company?.logo} className="h-8 w-8  " />
+          <AvatarImage src={job?.company?.logo} className="h-8 w-8   object-scale-down" />
         </Avatar>
         <div className="">
           <h1 className="font-[600] text-xl">{job?.company?.name}</h1>
