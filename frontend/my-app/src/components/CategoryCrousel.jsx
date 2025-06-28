@@ -40,8 +40,8 @@ const CategoryCrousal = () => {
             </CarouselItem>
           ))}
         </CarouselContent >
-        <CarouselPrevious className='max-sm:w-6 h-auto'/>
-        <CarouselNext className='max-sm:w-6 h-auto'/>
+        <CarouselPrevious className='max-sm:h-5 max-sm:w-5  '/>
+        <CarouselNext className='max-sm:h-5 max-sm:w-5  '/>
       </Carousel>
     </div>
   );

@@ -32,30 +32,30 @@ export default function JobCard({ job }) {
 
   const navigate = useNavigate();
   return (
-    <div className="max-w-xl shadow-xl h-fit w-85 p-4">
-      <div className="flex justify-between">
+    <div className="flex flex-col gap-5 shadow-md lg:shadow-xl p-3 md:p-5  h-fit bg-gray-50 rounded">
+      <div className="flex justify-between text-xs md:text-base">
         <p>
           {daysAgoFunction(job?.createdAt) == 0
             ? "Today"
             : `${daysAgoFunction(job?.createdAt)} days ago`}
         </p>
-        {isbookmark?<BookmarkCheck className="rounded-ful rounded-full shadow-md size-xl "></BookmarkCheck>:<Bookmark className="rounded-ful rounded-full shadow-md size-xl "></Bookmark>}
+        {isbookmark?<BookmarkCheck className="rounded-full shadow-md  "></BookmarkCheck>:<Bookmark className="  "></Bookmark>}
         
       </div>
 
-      <div className="flex mt-3">
+      <div className="flex ">
         <Avatar className="mr-3">
-          <AvatarImage src={job?.company?.logo} className="h-8 w-8   object-scale-down" />
+          <AvatarImage src={job?.company?.logo} className="h-6 w-6 md:h-8 md:w-8 object-scale-down" />
         </Avatar>
         <div className="">
-          <h1 className="font-[600] text-xl">{job?.company?.name}</h1>
-          <p className="text-gray-400">{job?.company?.location}</p>
+          <h1 className="font-[600] text-xs md:text-xl">{job?.company?.name}</h1>
+          <p className="text-gray-400 text-[10px] md:text-sm">{job?.company?.location}</p>
         </div>
       </div>
 
       <div>
-        <h1 className="font-[700] text-[300]">{job?.title}</h1>
-        <p className="text-gray-500 ">{job?.description}</p>
+        <h1 className="font-[700] text-xs md:text-base">{job?.title}</h1>
+        <p className="text-gray-500 text-xs md:text-base">{job?.description}</p>
 
         <div className="flex gap-5 mt-3">
           <Badge className=" font-bold text-[#2b2bcf]">
@@ -66,23 +66,23 @@ export default function JobCard({ job }) {
         </div>
       </div>
 
-      <div className=" mt-4 space-x-1">
-        <Button
+      <div className="space-x-1">
+        <button
           onClick={() => navigate(`/description/${job._id}`)}
-          className="border-gray-800 bg-gray-300 hover:bg-gray-200"
+          className="border-gray-800 bg-gray-300 hover:bg-gray-200 text-xs md:text-base px-2 py-1 md:px-4 md:py-2 rounded"
         >
           Details
-        </Button>
-        <Button
-          className="bg-[#1010f1] text-white shadow hover:bg-[#3d3dff]"
+        </button>
+        <button
+          className="bg-[#1010f1] text-white shadow hover:bg-[#3d3dff]  text-xs md:text-base px-2 py-1 md:px-4 md:py-2 rounded"
           onClick={handleBookmark}
         >
-         { isbookmark?"Unsave": "Save For Later"}
-        </Button>
+         { isbookmark?"Unsave": "Bookmark"}
+        </button>
       </div>
-      <div className="flex justify-between mt-3">
+      <div className="flex justify-between text-xs md:text-base">
         <p className="text-red-600  ">
-          Deadline: {job?.deadline?.split("T")[0]} 
+          Deadline: {new Date(job?.deadline?.split("T")[0]).toLocaleDateString()} 
         </p>
         <p>[{daysLeft(job?.deadline)}]⌛</p>
       </div>

@@ -24,19 +24,19 @@ export default function Bookmarks() {
 
   console.log(bookmarks);
   return (
-    <>
+    <div className="mb-10 md:mb-30">
       <Navbar />
 
-      <h1 className="max-w-7xl mx-auto mt-10 text-2xl font-bold  underline underline-offset-4">
+      <h1 className="flex  px-5 lg:px-32 mt-10 text-base md:text-2xl font-bold  underline underline-offset-4">
         Your Bookmarks: ({bookmarks.length})
       </h1>
-      <motion.div initial={{opacity:0, x:100}} animate={{opacity:1,x:0}} transition={{duration:0.3}} className="mt-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <motion.div initial={{opacity:0, x:100}} animate={{opacity:1,x:0}} transition={{duration:0.3}} className="mt-5 md:mt-10   px-5 lg:px-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {bookmarkedJobs?.length > 0 ? (
           bookmarkedJobs?.map((job) => <JobCard key={job?._id} job={job} />)
         ) : (
           <p>No bookmarked jobs found.</p>
         )}
       </motion.div>
-    </>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ export default function LatestJobCard({job}) {
   
     const navigate=useNavigate();
   return (
-    <div onClick={()=>navigate(`/description/${job._id}`)} className='flex flex-col gap-5 shadow-md lg:shadow-xl p-3 md:p-5    bg-gray-100 rounded-2xl'>
+    <div onClick={()=>navigate(`/description/${job._id}`)} className='flex flex-col gap-5 shadow-md lg:shadow-xl p-3 md:p-5   bg-gray-100 rounded-2xl'>
       <div> 
 
       <h1 className='text-xs md:text-[100] font-bold-[100] md:mb-1'>{job?.company?.name}</h1>

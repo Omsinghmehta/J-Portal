@@ -28,20 +28,20 @@ export default function FilterCard() {
     dispatch(setSearchQuery(selectedValue));
   }, [selectedValue]);
   return (
-    <div>
-      <h1 className="text-xl">Filter Jobs</h1>
-      <hr className="mt-3" />
+    <div className="w-full">
+      <h1 className="text-[10px] md:text-xl">Filter Jobs</h1>
+      <hr className="mt-2 md:mt-3" />
 
       {categ.map((val, idx) => (
         <div className="mt-4">
-          <h1 className="mb-4 font-bold text-xl">{val.cat}</h1>
+          <h1 className=" mb-2 md:mb-4 font-bold text-xs md:text-xl">{val.cat}</h1>
           <RadioGroup value={selectedValue} onValueChange={changeHandler}>
             {val.val.map((item, index) => {
               const itemId = `id${idx}-${index}`;
               return (
-                <div className="flex gap-2">
-                  <RadioGroupItem id={itemId} value={item} />
-                  <Label htmlFor={itemId}>{item}</Label>
+                <div className="flex gap-2 items-center">
+                  <RadioGroupItem id={itemId} value={item} className='max-sm:h-2 max-sm:w-2'/>
+                  <Label htmlFor={itemId} className='text-[8px] md:text-xs'>{item}</Label>
                 </div>
               );
             })}
