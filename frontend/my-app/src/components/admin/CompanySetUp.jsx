@@ -10,7 +10,6 @@ import { COMPANY_API_ENDPOINT } from "../utils/constant";
 import { toast } from "sonner";
 import { useSelector } from "react-redux";
 import useGetCompanyById from "@/hook/useGetCompanyById";
-// import { setSingleCompany } from "../Redux/companySlice";
 
 export default function CompanySetUp() {
   const [input, setInput] = useState({
@@ -20,13 +19,14 @@ export default function CompanySetUp() {
     location: "",
     file: null,
   });
+
   const navigate = useNavigate();
   const [loading, setloading] = useState(false);
   const params = useParams();
-
   const id = params.id;
+
   useGetCompanyById(id);
- const {singleCompany} = useSelector(store=>store.company);
+  const { singleCompany } = useSelector((store) => store.company);
 
   useEffect(() => {
     setInput({
@@ -41,19 +41,21 @@ export default function CompanySetUp() {
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
+
   const changeFiletHandler = (e) => {
     setInput({ ...input, file: e.target?.files?.[0] });
   };
+
   const submitHandler = async (e) => {
     setloading(true);
     e.preventDefault();
-    console.log(input);
     const formdata = new FormData();
     formdata.append("name", input.name);
     formdata.append("location", input.location);
     formdata.append("website", input.website);
     formdata.append("description", input.description);
     if (input.file) formdata.append("file", input.file);
+
     try {
       const res = await axios.put(
         `${COMPANY_API_ENDPOINT}/update/${params.id}`,
@@ -76,86 +78,95 @@ export default function CompanySetUp() {
       setloading(false);
     }
   };
+
   return (
     <div>
       <Navbar />
-      <div className="max-w-xl my-[4rem] mx-auto ">
-        <div className="flex gap-5">
+      <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
           <Button
             variant="outline"
             onClick={() => navigate("/admin/companies")}
+            className="flex items-center gap-2"
           >
-            <ArrowLeft></ArrowLeft> Back
+            <ArrowLeft size={18} />
+            Back
           </Button>
-          <h1 className="text-xl font-bold">Company Setup</h1>
+          <h1 className="text-2xl font-bold text-center sm:text-left">
+            Company Setup
+          </h1>
         </div>
+
+        <form onSubmit={submitHandler}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <Label className="text-md mb-2 block">Company Name</Label>
+              <Input
+                name="name"
+                type="text"
+                value={input.name}
+                onChange={changeEventHandler}
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <Label className="text-md mb-2 block">Description</Label>
+              <Input
+                name="description"
+                type="text"
+                value={input.description}
+                onChange={changeEventHandler}
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <Label className="text-md mb-2 block">Website</Label>
+              <Input
+                name="website"
+                type="text"
+                value={input.website}
+                onChange={changeEventHandler}
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <Label className="text-md mb-2 block">Location</Label>
+              <Input
+                name="location"
+                type="text"
+                value={input.location}
+                onChange={changeEventHandler}
+                className="w-full"
+              />
+            </div>
+
+            <div>
+              <Label className="text-md mb-2 block">Logo</Label>
+              <Input
+                name="file"
+                type="file"
+                accept="image/*"
+                onChange={changeFiletHandler}
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          <div className="mt-6">
+            {loading ? (
+              <Button className="w-full bg-black text-white" disabled>
+                <Loader2 className="animate-spin mr-2" />
+                Please wait
+              </Button>
+            ) : (
+              <Button className="w-full bg-black text-white">Update</Button>
+            )}
+          </div>
+        </form>
       </div>
-
-      <form onSubmit={submitHandler}>
-        <div className="w-[40vw] mx-auto  flex flex-wrap gap-3">
-          <div>
-            <Label className="text-md mb-2">Company Name</Label>
-            <Input
-              name="name"
-              type="text"
-              className="w-[18rem]"
-              value={input.name}
-              onChange={changeEventHandler}
-            ></Input>
-          </div>
-
-          <div>
-            <Label className="text-md mb-2">Description</Label>
-            <Input
-              name="description"
-              type="text"
-              value={input.description}
-              className="w-[18rem]"
-              onChange={changeEventHandler}
-            ></Input>
-          </div>
-
-          <div>
-            <Label className="text-md mb-2">Website</Label>
-            <Input
-              name="website"
-              type="text"
-              value={input.website}
-              className="w-[18rem]"
-              onChange={changeEventHandler}
-            ></Input>
-          </div>
-          <div>
-            <Label className="text-md mb-2">Location</Label>
-            <Input
-              name="location"
-              type="text"
-              value={input.location}
-              onChange={changeEventHandler}
-              className="w-[18rem]"
-            ></Input>
-          </div>
-          <div>
-            <Label className="text-md mb-2">Logo</Label>
-            <Input
-              name="file"
-              type="file"
-              accept="image/*"
-              className="w-[18rem]"
-              onChange={changeFiletHandler}
-            ></Input>
-          </div>
-
-          {loading ? (
-            <Button className=" bg-black text-white w-full mt-4">
-              <Loader2 className="animate-spin" />
-              Please wait
-            </Button>
-          ) : (
-            <Button className=" bg-black text-white w-full mt-4">Update</Button>
-          )}
-        </div>
-      </form>
     </div>
   );
 }

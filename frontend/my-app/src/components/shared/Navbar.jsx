@@ -63,9 +63,9 @@ const Navbar = () => {
        
            {
              !user?(
-                    <div className="flex items-center gap-2"> 
-                    <Link to="/login"><Button variant="outline">login</Button></Link>
-                    <Link to ="/signup"><Button className="bg-[#5a168b] text-white hover:bg-[#665081] ">Signup</Button></Link>
+                    <div className="flex items-center gap-1 md:gap-2"> 
+                    <Link to="/login"><button variant="outline" className="text-xs bg-[#dfdfdf] rounded hover:bg-[#e7e4e4] md:text-base px-2 py-1 md:px-4 md:py-2">login</button></Link>
+                    <Link to ="/signup"><button className="bg-[#5a168b] text-xs md:text-base px-2 py-1 md:px-4 md:py-2 rounded text-white hover:bg-[#665081] ">Signup</button></Link>
                     </div>
               )
              :

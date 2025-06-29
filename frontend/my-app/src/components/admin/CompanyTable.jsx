@@ -37,8 +37,8 @@ export default function CompanyTable() {
     setFilterCompany(filtered);
   }, [searchCompanyByText, companies]);
   return (
-    <div>
-      <Table className="max-w-7xl mx-auto">
+    <div className="px-8 md:px-32 ">
+      <Table className="p-3 max-sm:text-xs">
         <TableCaption className='border-t font-bold text-md'>
           A list of your's recent registered companies
         </TableCaption>
@@ -68,7 +68,7 @@ export default function CompanyTable() {
                   <Avatar>
                     <AvatarImage
                       src={company.logo}
-                      className="h-[3rem] w-[3rem] "
+                      className="h-[2rem] w-[2rem] md:h-[3rem] md:w-[3rem] "
                     />
                   </Avatar>
                 </TableCell>

@@ -36,8 +36,8 @@ export default function AdminJobsTable() {
     setFilterJobs(filtered);
   }, [searchJobByText, allAdminJobs]);
   return (
-    <div>
-      <Table className="max-w-7xl mx-auto">
+    <div className="px-5 md:px-32">
+      <Table className="p-3 max-sm:text-xs">
         <TableCaption className="border-t font-bold text-md">
           A list of your's recent registered Jobs
         </TableCaption>
@@ -65,18 +65,18 @@ export default function AdminJobsTable() {
               <TableRow key={Jobs._id} className="border-0 h-[4rem]">
                 <TableCell>{Jobs?.company?.name}</TableCell>
                 <TableCell>{Jobs?.title}</TableCell>
-                <TableCell>{Jobs?.createdAt.split("T")[0]}</TableCell>
+                <TableCell>{new Date( Jobs?.createdAt.split("T")[0]).toLocaleDateString()}</TableCell>
                 <TableCell>
                   <Popover>
                     <PopoverTrigger>
                       <MoreHorizontal className="cursor-pointer"></MoreHorizontal>
                     </PopoverTrigger>
-                    <PopoverContent className="w-fit  border-none  bg-white">
-                      <div className="flex gap-2 my-2 cursor-pointer"
+                    <PopoverContent className="w-fit  border-none text-xs md:text-base bg-white">
+                      <div className="flex gap-2 my-2  cursor-pointer"
                         onClick={() =>
                           navigate(`/admin/jobs/${Jobs?._id}`)
                         }>
-                        <Edit></Edit>
+                        <Edit className="max-sm:size-4"></Edit>
                         <span>Edit</span>
                       </div>
 
@@ -86,7 +86,7 @@ export default function AdminJobsTable() {
                           navigate(`/admin/jobs/${Jobs._id}/applicants`)
                         }
                       >
-                        <Eye></Eye>
+                        <Eye className="max-sm:size-4"></Eye>
                         <span>Applicants</span>
                       </div>
                     </PopoverContent>

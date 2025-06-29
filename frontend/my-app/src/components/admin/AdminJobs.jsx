@@ -20,19 +20,19 @@ export default function AdminJobs() {
     <div>
       <Navbar />
       <div>
-        <div className="max-w-6xl mx-auto my-10 flex justify-between">
-          <Input
+        <div className="px-5 md:px-32 my-5 md:my-10 flex justify-between ">
+          <input
             type="text"
             placeholder="Filter by name"
             onChange={(e) => setInput(e.target.value)}
-            className="w-fit"
+            className="border px-2 py-1 rounded md:px-4 md:py-2 focus:outline-0 border-gray-500 text-[10px] md:text-base "
           />
-          <Button
-            className="bg-black text-white cursor-pointer"
+          <button
+            className="bg-black px-2 py-1 rounded md:px-4 md:py-2 text-white cursor-pointer max-sm:size-fit max-sm:text-[10px]"
             onClick={() => navigate("/admin/jobs/create")}
           >
             Post New Jobs
-          </Button>
+          </button>
         </div>
         <AdminJobsTable />
       </div>

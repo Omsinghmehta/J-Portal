@@ -32,14 +32,14 @@ export default function JobCard({ job }) {
 
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-5 shadow-md lg:shadow-xl p-3 md:p-5  h-fit bg-gray-50 rounded">
+    <div className="flex flex-col gap-2 md:gap-5 shadow-md lg:shadow-xl p-3 md:p-5  h-fit bg-gray-50 rounded">
       <div className="flex justify-between text-xs md:text-base">
         <p>
           {daysAgoFunction(job?.createdAt) == 0
             ? "Today"
             : `${daysAgoFunction(job?.createdAt)} days ago`}
         </p>
-        {isbookmark?<BookmarkCheck className="rounded-full shadow-md  "></BookmarkCheck>:<Bookmark className="  "></Bookmark>}
+        {isbookmark?<BookmarkCheck className="rounded-full shadow-md max-sm:size-4"></BookmarkCheck>:<Bookmark className="max-sm:size-4"></Bookmark>}
         
       </div>
 
@@ -57,7 +57,7 @@ export default function JobCard({ job }) {
         <h1 className="font-[700] text-xs md:text-base">{job?.title}</h1>
         <p className="text-gray-500 text-xs md:text-base">{job?.description}</p>
 
-        <div className="flex gap-5 mt-3">
+        <div className="flex  md:gap-5 mt-1 md:mt-3">
           <Badge className=" font-bold text-[#2b2bcf]">
             {job?.position} position
           </Badge>
