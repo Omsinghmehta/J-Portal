@@ -32,7 +32,7 @@ export default function JobCard({ job }) {
 
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-2 md:gap-5 shadow-md lg:shadow-xl p-3 md:p-5  h-fit bg-gray-50 rounded">
+    <div className="flex flex-col gap-2 transition-transform duration-300 hover:scale-105 md:gap-5 shadow-md lg:shadow-xl p-3 md:p-5  h-fit bg-gray-50 rounded-md">
       <div className="flex justify-between text-xs md:text-base">
         <p>
           {daysAgoFunction(job?.createdAt) == 0

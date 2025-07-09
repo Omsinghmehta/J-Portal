@@ -73,7 +73,7 @@ export default function JobDescription() {
     );
   }
   return (
-    <>
+    <div className="px-5 lg-px-32">
       <div className="flex justify-between max-w-6xl mx-auto mt-12">
         <div>
           <h1 className="font-bold text-2xl">{singleJob?.title}</h1>
@@ -154,6 +154,6 @@ export default function JobDescription() {
           </h1>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -17,10 +17,9 @@ export const toggleBookmark = (jobId) => async (dispatch) => {
   }
 };
 
-export const fetchBookmarks = (userId) => async (dispatch) => {
+export const fetchBookmarks = () => async (dispatch) => {
   try {
-    console.log(userId);
-    const res = await axios.get(`${USER_API_ENDPOINT}/my-bookmarks/${userId}`,{withCredentials:true});
+    const res = await axios.get(`${USER_API_ENDPOINT}/my-bookmarks`,{withCredentials:true});
     dispatch(setBookmarks(res.data.bookmarks));
   } catch (error) {
     console.error(error);

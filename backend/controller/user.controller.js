@@ -180,7 +180,7 @@ export const toggleBookmarks=async(req,res)=>{
 
 } 
 export const getBookmarks=async(req,res)=>{
-  const userId=req.params.userId;
+  const userId=req.id;
   const user=await User.findById(userId);
  
   res.json({bookmarks:user.bookmarks});

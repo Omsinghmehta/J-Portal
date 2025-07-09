@@ -9,7 +9,7 @@ router.route("/login").post(login);
 router.route("/profile/update").post(isAuthenticated,multiUpload,updateProfile);
 router.route("/logout").get(logout);
 router.route("/bookmark/:jobId").post(isAuthenticated,toggleBookmarks);
-router.route("/my-bookmarks/:userId").get(isAuthenticated,getBookmarks);
+router.route("/my-bookmarks").get(isAuthenticated,getBookmarks);
 
 
  export default router;

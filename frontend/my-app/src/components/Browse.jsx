@@ -6,6 +6,7 @@ import useGetAllJobs from "@/hook/useGetAllJobs";
 import { setSearchQuery } from "./Redux/jobSlice";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
+
 export default function Browse() {
   useGetAllJobs();
   const { allJobs } = useSelector((store) => store.job);
@@ -25,7 +26,7 @@ export default function Browse() {
           ))}
         </div>
       </motion.div>
-      <Footer/>
+      <Footer className="relative bottom-0 "/>
     </div>
   );
 }

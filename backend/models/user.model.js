@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// import { Job } from "./job.model.js";
 const userSchema = new mongoose.Schema({
     fullname: {
         type: String,
