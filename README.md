@@ -13,27 +13,30 @@ This platform solves the problem of scattered job applications by centralizing e
 
 ✨ Features
 
-User Authentication with JWT and role-based access (Candidate / Recruiter)
-1. Job Listings: Search, view, and filter jobs 
-8. Profile page for Candidate and upload Resume and skills and edit their profile.
-3. Candidate can generate their resume.
-2. Can see the job description and apply to Jobs.
-6. Job Deadline and Automatic removal of jobs.
-4. Bookmark/Unbookmark Jobs for later
-5. Real-time Notifications via email.
-7. Candidate can see the status of their job application.
-9. Recruiter Dashboard: Can see the applied users details and change status of candidate.
-10. Recruiter can register company and post jobs.
-11. Recruiter can edit the posted jobs and company details.
+
+- **User Authentication** with JWT and role-based access (Candidate / Recruiter)
+- **Job Listings**: Search, view, and filter jobs
+- **Profile Page** for candidates to upload resume, add skills, and edit details
+- **Resume Generator**: Create a professional resume instantly
+- **Job Applications**: View job descriptions and apply directly
+- **Job Deadlines**: Automatic removal of expired jobs
+- **Bookmark Jobs**: Save and manage favorite job posts
+- **Real-time Email Notifications** for important updates
+- **Application Status Tracking** for candidates
+- **Recruiter Dashboard**: View applicant details and update their status
+- **Company Management**: Recruiters can register companies and post/edit jobs
+
 
 
 
 🛠 Tech Stack
 
-Frontend: React, Redux, TailwindCSS, ShadCN UI
-Backend: Node.js, Express.js
-Database: MongoDB, Mongoose
-Others: Cloudinary (file uploads), Nodemailer (email notifications), JWT (authentication)
+**Frontend:** React, Redux, TailwindCSS, ShadCN UI  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB, Mongoose  
+**Others:** Cloudinary, Nodemailer, JWT  
+
+![MERN](https://img.shields.io/badge/Stack-MERN-green) ![React](https://img.shields.io/badge/Frontend-React-blue) ![Node](https://img.shields.io/badge/Backend-Node.js-yellowgreen) ![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)
 
 
 
@@ -71,6 +74,13 @@ Others: Cloudinary (file uploads), Nodemailer (email notifications), JWT (authen
 <img width="248" height="585" alt="image" src="https://github.com/user-attachments/assets/bee3314a-5597-470c-af2e-c5c47b777150" />
 
 
+
+🚀 Live Demo
+
+
+- **Live Website**: [TalentBridge on Render](https://j-portal.onrender.com/)
+- **Demo Video**: [Watch Here](https://drive.google.com/drive/u/0/folders/15H-q47X_3lMyCp3pgr6FM5J8WvQNSRkI)
+
      
 
 🖼 Screenshots / Demo
@@ -89,10 +99,12 @@ Others: Cloudinary (file uploads), Nodemailer (email notifications), JWT (authen
 
 
 
-Video Link : https://drive.google.com/drive/u/0/folders/15H-q47X_3lMyCp3pgr6FM5J8WvQNSRkI
+ 🚀 Future Improvements
 
+ 
+- Real-time chat between candidates and recruiters
+- AI-based job recommendations
+- Interview scheduling and reminders
+- Analytics dashboard for recruiters
 
-
-
-  
 
