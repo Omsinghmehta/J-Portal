@@ -1,4 +1,4 @@
-🌉 TalentBridge - Modern Job Portal
+# 🌉 TalentBridge - Modern Job Portal
 
 A full-stack MERN application that connects job seekers with recruiters, making job searching, applying, and managing candidates seamless and efficient.
 
@@ -6,12 +6,12 @@ Live Website : https://j-portal.onrender.com/
 
 
 
-📖 About the Project
+# 📖 About the Project
 
 TalentBridge is a modern job portal designed for both job seekers and recruiters. Candidates can browse, search, bookmark, and apply for jobs with ease, while recruiters can post jobs, view applicants, and manage candidate statuses.
 This platform solves the problem of scattered job applications by centralizing everything in one easy-to-use interface. With real-time notifications, resume uploads, and a recruiter dashboard, TalentBridge makes the hiring process smooth and efficient.
 
-✨ Features
+# ✨ Features
 
 
 - **User Authentication** with JWT and role-based access (Candidate / Recruiter)
@@ -29,7 +29,7 @@ This platform solves the problem of scattered job applications by centralizing e
 
 
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
 **Frontend:** React, Redux, TailwindCSS, ShadCN UI  
 **Backend:** Node.js, Express.js  
@@ -40,7 +40,7 @@ This platform solves the problem of scattered job applications by centralizing e
 
 
 
-⚙️ Installation
+# ⚙️ Installation
 
 1. Clone the repo:
 
@@ -48,34 +48,34 @@ This platform solves the problem of scattered job applications by centralizing e
 
 2. Install dependencies:
 
-   cd backend && npm install
-   cd ../frontend && npm install
+   * cd backend && npm install
+   * cd ../frontend && npm install
 
 3. Create a .env file in the backend folder and add environment variables (see below).
 
-   MONGO_URI=connectio string
-   PORT=8000
-   SECRET_KEY=your_secret_key
-   CLOUD_NAME=your_cloud_name
-   API_KEY=your_api_key
-   API_SECRET=your_api_secret_key
-   MAIL_USER=your_mail_user
-   MAIL_PASS=your_mail_pass
+   * MONGO_URI=connectio string
+   * PORT=8000
+   * SECRET_KEY=your_secret_key
+   * CLOUD_NAME=your_cloud_name
+   * API_KEY=your_api_key
+   * API_SECRET=your_api_secret_key
+   * MAIL_USER=your_mail_user
+   * MAIL_PASS=your_mail_pass
 
 5. Run the backend and frontend:
 
-   cd backend && npm run dev
-   cd frontend && npm run dev
+   * cd backend && npm run dev
+   * cd frontend && npm run dev
 
 
 
-📂 Folder Structure
+# 📂 Folder Structure
 
 <img width="248" height="585" alt="image" src="https://github.com/user-attachments/assets/bee3314a-5597-470c-af2e-c5c47b777150" />
 
 
 
-🚀 Live Demo
+# 🚀 Live Demo
 
 
 - **Live Website**: [TalentBridge on Render](https://j-portal.onrender.com/)
@@ -83,7 +83,7 @@ This platform solves the problem of scattered job applications by centralizing e
 
      
 
-🖼 Screenshots / Demo
+# 🖼 Screenshots / Demo
 
 <img width="1905" height="923" alt="image" src="https://github.com/user-attachments/assets/629df3fb-ea71-4367-8650-1e8066c6f403" />
 
@@ -99,7 +99,7 @@ This platform solves the problem of scattered job applications by centralizing e
 
 
 
- 🚀 Future Improvements
+ # 🚀 Future Improvements
 
  
 - Real-time chat between candidates and recruiters
